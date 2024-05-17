@@ -5,3 +5,7 @@
 env/
 venv/
 *.swp
+
+build/
+dist/
+*.egg-info/

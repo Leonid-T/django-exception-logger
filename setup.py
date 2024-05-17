@@ -1,5 +1,5 @@
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
 here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.md')).read()
@@ -7,8 +7,8 @@ README = open(os.path.join(here, 'README.md')).read()
 
 setup(
     name='django-exception-logger',
-    version='0.0.1',
-    packages=['exception_logger'],
+    version='0.1',
+    packages=find_packages(exclude=['tests*']),
     description='Adds error logging to the admin panel',
     long_description=README,
     long_description_content_type='text/markdown',
