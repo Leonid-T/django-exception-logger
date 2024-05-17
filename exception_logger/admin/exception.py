@@ -1,11 +1,7 @@
 from django.contrib import admin
 
 from exception_logger.forms import LimitModelFormset
-from exception_logger.models import (
-    ExceptionModel,
-    ExceptionDataModel,
-    NoLogException,
-)
+from exception_logger.models import ExceptionDataModel
 from exception_logger.utils import pretty_json
 
 
@@ -34,7 +30,6 @@ class ExceptionDataModelInline(admin.StackedInline):
         return pretty_json(obj.cookies)
 
 
-@admin.register(ExceptionModel)
 class ExceptionModelAdmin(admin.ModelAdmin):
     inlines = (ExceptionDataModelInline,)
     fields = (
@@ -71,7 +66,6 @@ class ExceptionModelAdmin(admin.ModelAdmin):
         return False
 
 
-@admin.register(NoLogException)
 class NoLogExceptionAdmin(admin.ModelAdmin):
     list_display = ("exception",)
     list_display_links = ("exception",)

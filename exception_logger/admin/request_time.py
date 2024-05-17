@@ -1,9 +1,6 @@
 from django.contrib import admin
 
-from exception_logger.models import RequestTime
 
-
-@admin.register(RequestTime)
 class RequestTimeAdmin(admin.ModelAdmin):
     fields = ("method", "path", "average_with_delta_error", "quantity")
     list_display = ("method", "path", "average_with_delta_error", "quantity")
