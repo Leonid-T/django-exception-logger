@@ -1,6 +1,6 @@
 LICENSE
 MANIFEST.in
-README.md
+README.rst
 setup.py
 django_exception_logger.egg-info/PKG-INFO
 django_exception_logger.egg-info/SOURCES.txt
