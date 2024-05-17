@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.translation import gettext_lazy as _
 
 
 class RequestTimeAdmin(admin.ModelAdmin):
@@ -9,7 +10,7 @@ class RequestTimeAdmin(admin.ModelAdmin):
     search_fields = ("path", "method")
     ordering = ("-average_time", "-quantity")
 
-    @admin.display(description="Время запроса, сек")
+    @admin.display(description=(_("Request time") + ", " + _("sec")))
     def average_with_delta_error(self, obj):
         return f"{round(obj.average_time, 6)} ± {round(obj.error_delta, 6)}"
 

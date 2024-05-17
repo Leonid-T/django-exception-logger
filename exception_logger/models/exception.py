@@ -11,6 +11,7 @@ from django.db.models import (
     CASCADE,
     UniqueConstraint,
 )
+from django.utils.translation import gettext_lazy as _
 
 from .enums import Method
 
@@ -49,21 +50,21 @@ class ExceptionManager(Manager):
 
 
 class ExceptionModel(Model):
-    method = CharField("Request method", max_length=8, choices=Method.choices)
-    path = CharField("Request path", max_length=512)
+    method = CharField(_("Request method"), max_length=8, choices=Method.choices)
+    path = CharField(_("Request path"), max_length=512)
 
     exception = TextField()
     traceback = TextField()
 
-    count = PositiveIntegerField("Quantity", default=1)
-    last_throw = DateTimeField("Last throw", auto_now=True)
-    first_throw = DateTimeField("Fast throw", auto_now_add=True)
+    count = PositiveIntegerField(_("Quantity"), default=1)
+    last_throw = DateTimeField(_("Last throw"), auto_now=True)
+    first_throw = DateTimeField(_("First throw"), auto_now_add=True)
 
     objects = ExceptionManager()
 
     class Meta:
-        verbose_name = "Exception"
-        verbose_name_plural = "Exceptions"
+        verbose_name = _("Exception")
+        verbose_name_plural = _("Exceptions")
         constraints = (
             UniqueConstraint(
                 fields=("method", "path", "exception"), name="exception_path"
@@ -91,10 +92,10 @@ class ExceptionDataModel(Model):
     headers = JSONField("Headers", default=dict)
     cookies = JSONField("Cookies", default=dict)
 
-    datetime = DateTimeField("Date", auto_now_add=True)
+    datetime = DateTimeField(_("Date"), auto_now_add=True)
 
     class Meta:
-        verbose_name = "Throw data"
+        verbose_name = _("Throw data")
         verbose_name_plural = verbose_name
 
     def __str__(self):
@@ -105,8 +106,8 @@ class NoLogException(Model):
     exception = CharField(max_length=256)
 
     class Meta:
-        verbose_name = "No log Exception"
-        verbose_name_plural = "No log Exceptions"
+        verbose_name = _("No log Exception")
+        verbose_name_plural = _("No log Exceptions")
 
     def __str__(self):
         return self.exception

@@ -7,6 +7,7 @@ from django.db.models import (
     PositiveIntegerField,
     UniqueConstraint,
 )
+from django.utils.translation import gettext_lazy as _
 
 from .enums import Method
 
@@ -36,18 +37,18 @@ class RequestTimeManager(Manager):
 class RequestTime(Model):
     Method = Method
 
-    method = CharField("Request method", max_length=8, choices=Method.choices)
-    path = CharField("Request path", max_length=512)
+    method = CharField(_("Request method"), max_length=8, choices=Method.choices)
+    path = CharField(_("Request path"), max_length=512)
 
-    average_time = FloatField("Average request time", default=0)
-    dispersion = FloatField("Dispersion", default=0)
-    quantity = PositiveIntegerField("Quantity", default=0)
+    average_time = FloatField(_("Average request time"), default=0)
+    dispersion = FloatField(_("Dispersion"), default=0)
+    quantity = PositiveIntegerField(_("Quantity"), default=0)
 
     objects = RequestTimeManager()
 
     class Meta:
-        verbose_name = "Request time"
-        verbose_name_plural = "Request times"
+        verbose_name = _("Request time")
+        verbose_name_plural = _("Request times")
         constraints = (
             UniqueConstraint(fields=("method", "path"), name="request_path"),
         )

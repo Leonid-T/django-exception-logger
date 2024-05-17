@@ -10,6 +10,7 @@ from django.db.models import (
     CASCADE,
     UniqueConstraint,
 )
+from django.utils.translation import gettext_lazy as _
 
 
 class CeleryExceptionManager(Manager):
@@ -30,20 +31,20 @@ class CeleryExceptionManager(Manager):
 
 
 class CeleryExceptionModel(Model):
-    task = CharField("Task", max_length=512)
+    task = CharField(_("Task"), max_length=512)
 
     exception = TextField()
     traceback = TextField()
 
-    count = PositiveIntegerField("Quantity", default=1)
-    last_throw = DateTimeField("Last throw", auto_now=True)
-    first_throw = DateTimeField("First throw", auto_now_add=True)
+    count = PositiveIntegerField(_("Quantity"), default=1)
+    last_throw = DateTimeField(_("Last throw"), auto_now=True)
+    first_throw = DateTimeField(_("First throw"), auto_now_add=True)
 
     objects = CeleryExceptionManager()
 
     class Meta:
-        verbose_name = "Celery Exception"
-        verbose_name_plural = "Celery Exceptions"
+        verbose_name = _("Celery Exception")
+        verbose_name_plural = _("Celery Exceptions")
         constraints = (
             UniqueConstraint(fields=("task", "exception"), name="exception_task"),
         )
@@ -66,10 +67,10 @@ class CeleryExceptionDataModel(Model):
     args = JSONField("args", default=list)
     kwargs = JSONField("kwargs", default=dict)
 
-    datetime = DateTimeField("Date", auto_now_add=True)
+    datetime = DateTimeField(_("Date"), auto_now_add=True)
 
     class Meta:
-        verbose_name = "Throw data"
+        verbose_name = _("Throw data")
         verbose_name_plural = verbose_name
 
     def __str__(self):
@@ -80,8 +81,8 @@ class NoLogCeleryException(Model):
     exception = CharField(max_length=256)
 
     class Meta:
-        verbose_name = "No log Celery Exception"
-        verbose_name_plural = "No log Celery Exceptions"
+        verbose_name = _("No log Celery Exception")
+        verbose_name_plural = _("No log Celery Exceptions")
 
     def __str__(self):
         return self.exception

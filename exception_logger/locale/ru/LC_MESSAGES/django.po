@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-17 10:39-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: exception_logger/admin/request_time.py:13
+#: exception_logger/models/request_time.py:50
+msgid "Request time"
+msgstr "Время запроса"
+
+#: exception_logger/admin/request_time.py:13
+msgid "sec"
+msgstr "сек"
+
+#: exception_logger/apps.py:8
+msgid "Exception Logger"
+msgstr "Управление ошибками"
+
+#: exception_logger/models/celery_exception.py:34
+msgid "Task"
+msgstr "Задача"
+
+#: exception_logger/models/celery_exception.py:39
+#: exception_logger/models/exception.py:59
+#: exception_logger/models/request_time.py:45
+msgid "Quantity"
+msgstr "Количество"
+
+#: exception_logger/models/celery_exception.py:40
+#: exception_logger/models/exception.py:60
+msgid "Last throw"
+msgstr "Последний вызов"
+
+#: exception_logger/models/celery_exception.py:41
+#: exception_logger/models/exception.py:61
+msgid "First throw"
+msgstr "Первый вызов"
+
+#: exception_logger/models/celery_exception.py:46
+msgid "Celery Exception"
+msgstr ""
+
+#: exception_logger/models/celery_exception.py:47
+msgid "Celery Exceptions"
+msgstr ""
+
+#: exception_logger/models/celery_exception.py:70
+#: exception_logger/models/exception.py:95
+msgid "Date"
+msgstr "Дата"
+
+#: exception_logger/models/celery_exception.py:73
+#: exception_logger/models/exception.py:98
+msgid "Throw data"
+msgstr "Данные по вызовам"
+
+#: exception_logger/models/celery_exception.py:84
+msgid "No log Celery Exception"
+msgstr ""
+
+#: exception_logger/models/celery_exception.py:85
+msgid "No log Celery Exceptions"
+msgstr ""
+
+#: exception_logger/models/exception.py:53
+#: exception_logger/models/request_time.py:40
+msgid "Request method"
+msgstr "Метод запроса"
+
+#: exception_logger/models/exception.py:54
+#: exception_logger/models/request_time.py:41
+msgid "Request path"
+msgstr "Запрос"
+
+#: exception_logger/models/exception.py:66
+msgid "Exception"
+msgstr ""
+
+#: exception_logger/models/exception.py:67
+msgid "Exceptions"
+msgstr ""
+
+#: exception_logger/models/exception.py:109
+msgid "No log Exception"
+msgstr ""
+
+#: exception_logger/models/exception.py:110
+msgid "No log Exceptions"
+msgstr ""
+
+#: exception_logger/models/request_time.py:43
+msgid "Average request time"
+msgstr "Среднее время запроса"
+
+#: exception_logger/models/request_time.py:44
+msgid "Dispersion"
+msgstr "Дисперсия"
+
+#: exception_logger/models/request_time.py:51
+msgid "Request times"
+msgstr "Длительность запросов"
