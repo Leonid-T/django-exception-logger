@@ -7,7 +7,7 @@ README = open(os.path.join(here, "README.md")).read()
 
 setup(
     name="django-exception-logger",
-    version="0.1.4",
+    version="0.1.5",
     packages=find_packages(exclude=["tests*"]),
     include_package_data=True,
     description="Adds error logging to the admin panel",

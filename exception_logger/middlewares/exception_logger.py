@@ -15,6 +15,8 @@ class ExceptionLoggerMiddleware(MiddlewareMixin):
             data = {}
         except RequestDataTooBig:
             data = "RequestDataTooBig"
+        except UnicodeDecodeError:
+            data = "UnicodeDecodeError"
 
         request._data_to_log = data
 

@@ -40,6 +40,7 @@ class CeleryExceptionModelAdmin(admin.ModelAdmin):
         "last_throw",
         "first_throw",
     )
+    list_filter = ("task",)
     ordering = ("-count", "-last_throw")
     list_display_links = ("task", "short_exception")
     search_fields = ("task", "exception")

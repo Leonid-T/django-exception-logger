@@ -23,6 +23,7 @@ class CeleryExceptionManager(Manager):
             exception_model = CeleryExceptionModel(**unique_data)
 
         exception_model.traceback = traceback
+        exception_model.count += 1
         exception_model.save()
 
         CeleryExceptionDataModel.objects.create(
