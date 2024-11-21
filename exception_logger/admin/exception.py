@@ -50,7 +50,7 @@ class ExceptionModelAdmin(admin.ModelAdmin):
         "last_throw",
         "first_throw",
     )
-    ordering = ("-count", "-last_throw")
+    ordering = ("-last_throw", "-count")
     list_display_links = ("method", "path", "short_exception")
     list_filter = ("method",)
     search_fields = ("path", "method", "exception")

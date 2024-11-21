@@ -15,11 +15,11 @@ class CeleryExceptionDataModelInline(admin.StackedInline):
 
     @admin.display(description="args")
     def _args(self, obj):
-        return pretty_json(obj.data)
+        return pretty_json(obj.args)
 
     @admin.display(description="kwargs")
     def _kwargs(self, obj):
-        return pretty_json(obj.query_params)
+        return pretty_json(obj.kwargs)
 
 
 class CeleryExceptionModelAdmin(admin.ModelAdmin):
@@ -41,7 +41,7 @@ class CeleryExceptionModelAdmin(admin.ModelAdmin):
         "first_throw",
     )
     list_filter = ("task",)
-    ordering = ("-count", "-last_throw")
+    ordering = ("-last_throw", "-count")
     list_display_links = ("task", "short_exception")
     search_fields = ("task", "exception")
 
